@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Создать ученика
+{% endblock %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="card mb-3">
+    <div class="card-header">Редактирование ученика</div>
+    <form action="{{ schoolboy.get_update_url }}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-error">{{ form.non.field.errors }}</div>
+        {% for row in form %}
+        <div class="card-body">
+            <label class="form-label" for="{{ row.id_for_label }}">{{ row.label }}:</label> {{ row }}
+            <div class="form-error">{{ row.errors }}</div>
+        </div>
+        {% endfor %}
+        <div class="card-header">
+        <button type="submit" class="btn btn-primary btn-block">Сохранить данные</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

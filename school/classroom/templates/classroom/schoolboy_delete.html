@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Создать ученика
+{% endblock %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="card mb-3">
+    <div class="card-header">Удалить ученика? {{ schoolboy }}</div>
+    <form action="{{ schoolboy.get_delete_url }}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="card-header">
+            <button type="submit" class="btn btn-primary btn-block">Да</button>
+            <a href="{% url 'schoolboy' %}"
+               class="btn btn-outline-secondary">Нет</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
