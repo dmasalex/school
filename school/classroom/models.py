@@ -1,11 +1,11 @@
 from django.db import models
 from django.shortcuts import reverse
-import re
+from pytils import translit
 
 
-def slugify(s):
-    pattern = r'[^\w+]'
-    return re.sub(pattern, '-', s)
+def slugify(s, date_of_birth):
+    new_slug = translit.slugify(s)
+    return new_slug + "-" + date_of_birth
 
 
 class Classroom(models.Model):
@@ -104,7 +104,7 @@ class Schoolboy(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            self.slug = (slugify(self.name) + '-' + str(self.date_of_birth))
+            self.slug = slugify(self.name, str(self.date_of_birth))
         super(Schoolboy, self).save(*args, **kwargs)
 
     def __str__(self):
