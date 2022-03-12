@@ -57,8 +57,10 @@ img:hover {
                         <a target="_blank"><img src="{{ boy.photo.url }}"></a>
                     </div>
                     {{ boy }}
+                    {% if request.user.is_authenticated %}
                     {% if boy.energy %}
                     <h5>Активный</h5>
+                    {% endif %}
                     {% endif %}
                 </div>
             </td>
@@ -74,8 +76,10 @@ img:hover {
                         <a target="_blank"><img src="{{ boy.photo.url }}"></a>
                     </div>
                     {{ boy }}
+                    {% if request.user.is_authenticated %}
                     {% if boy.energy %}
                     <h5>Активный</h5>
+                    {% endif %}
                     {% endif %}
                 </div>
             </td>
@@ -91,8 +95,10 @@ img:hover {
                         <a target="_blank"><img src="{{ boy.photo.url }}"></a>
                     </div>
                     {{ boy }}
+                    {% if request.user.is_authenticated %}
                     {% if boy.energy %}
                     <h5>Активный</h5>
+                    {% endif %}
                     {% endif %}
                 </div>
             </td>
@@ -108,8 +114,10 @@ img:hover {
                         <a target="_blank"><img src="{{ boy.photo.url }}"></a>
                     </div>
                     {{ boy }}
+                    {% if request.user.is_authenticated %}
                     {% if boy.energy %}
                     <h5>Активный</h5>
+                    {% endif %}
                     {% endif %}
                 </div>
             </td>
@@ -125,8 +133,10 @@ img:hover {
                         <a target="_blank"><img src="{{ boy.photo.url }}"></a>
                     </div>
                     {{ boy }}
+                    {% if request.user.is_authenticated %}
                     {% if boy.energy %}
                     <h5>Активный</h5>
+                    {% endif %}
                     {% endif %}
                 </div>
             </td>
@@ -143,7 +153,9 @@ img:hover {
                     </div>
                     {{ boy }}
                     {% if boy.energy %}
+                    {% if request.user.is_authenticated %}
                     <h5>Активный</h5>
+                    {% endif %}
                     {% endif %}
                 </div>
             </td>

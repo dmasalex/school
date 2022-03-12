@@ -37,34 +37,46 @@ def create_lst_boys(boys_one, girls_one, boys_one_plus, girls_one_plus, boys_two
                         try:
                             try:
                                 try:
-                                    boy = random.choice(boys_one)
-                                    desk_1.append(boy)
-                                    boys_one.remove(boy)
-                                    continue
+                                    try:
+                                        try:
+                                            boy = random.choice(boys_one)
+                                            desk_1.append(boy)
+                                            boys_one.remove(boy)
+                                            continue
+                                        except:
+                                            girl = random.choice(girls_one)
+                                            desk_1.append(girl)
+                                            girls_one.remove(girl)
+                                            continue
+                                    except:
+                                        boy = random.choice(boys_two)
+                                        desk_1.append(boy)
+                                        boys_two.remove(boy)
+                                        continue
                                 except:
-                                    girl = random.choice(girls_one)
+                                    girl = random.choice(girls_two)
                                     desk_1.append(girl)
-                                    girls_one.remove(girl)
+                                    girls_two.remove(girl)
                                     continue
                             except:
-                                boy = random.choice(boys_two)
+                                boy = random.choice(boys_three)
                                 desk_1.append(boy)
-                                boys_two.remove(boy)
+                                boys_three.remove(boy)
                                 continue
                         except:
-                            girl = random.choice(girls_two)
+                            girl = random.choice(girls_three)
                             desk_1.append(girl)
-                            girls_two.remove(girl)
+                            girls_three.remove(girl)
                             continue
                     except:
-                        boy = random.choice(boys_three)
+                        boy = random.choice(boys)
                         desk_1.append(boy)
-                        boys_three.remove(boy)
+                        boys.remove(boy)
                         continue
                 except:
-                    girl = random.choice(girls_three)
+                    girl = random.choice(girls)
                     desk_1.append(girl)
-                    girls_three.remove(girl)
+                    girls.remove(girl)
                     continue
             except:
                 boy = random.choice(boys)
@@ -72,10 +84,7 @@ def create_lst_boys(boys_one, girls_one, boys_one_plus, girls_one_plus, boys_two
                 boys.remove(boy)
                 continue
         except:
-            girl = random.choice(girls)
-            desk_1.append(girl)
-            girls.remove(girl)
-            continue
+            return desk_1, desk_2, desk_3, desk_4, desk_5, desk_6
 
     while len(desk_1) < 4:
         try:
@@ -136,34 +145,46 @@ def create_lst_boys(boys_one, girls_one, boys_one_plus, girls_one_plus, boys_two
                         try:
                             try:
                                 try:
-                                    boy = random.choice(boys_one)
-                                    desk_1.append(boy)
-                                    boys_one.remove(boy)
-                                    continue
+                                    try:
+                                        try:
+                                            boy = random.choice(boys_one)
+                                            desk_1.append(boy)
+                                            boys_one.remove(boy)
+                                            continue
+                                        except:
+                                            girl = random.choice(girls_one)
+                                            desk_1.append(girl)
+                                            girls_one.remove(girl)
+                                            continue
+                                    except:
+                                        boy = random.choice(boys_two)
+                                        desk_1.append(boy)
+                                        boys_two.remove(boy)
+                                        continue
                                 except:
-                                    girl = random.choice(girls_one)
+                                    girl = random.choice(girls_two)
                                     desk_1.append(girl)
-                                    girls_one.remove(girl)
+                                    girls_two.remove(girl)
                                     continue
                             except:
-                                boy = random.choice(boys_two)
+                                boy = random.choice(boys_three)
                                 desk_1.append(boy)
-                                boys_two.remove(boy)
+                                boys_three.remove(boy)
                                 continue
                         except:
-                            girl = random.choice(girls_two)
+                            girl = random.choice(girls_three)
                             desk_1.append(girl)
-                            girls_two.remove(girl)
+                            girls_three.remove(girl)
                             continue
                     except:
-                        boy = random.choice(boys_three)
+                        boy = random.choice(boys)
                         desk_1.append(boy)
-                        boys_three.remove(boy)
+                        boys.remove(boy)
                         continue
                 except:
-                    girl = random.choice(girls_three)
+                    girl = random.choice(girls)
                     desk_1.append(girl)
-                    girls_three.remove(girl)
+                    girls.remove(girl)
                     continue
             except:
                 boy = random.choice(boys)
@@ -171,10 +192,7 @@ def create_lst_boys(boys_one, girls_one, boys_one_plus, girls_one_plus, boys_two
                 boys.remove(boy)
                 continue
         except:
-            girl = random.choice(girls)
-            desk_1.append(girl)
-            girls.remove(girl)
-            continue
+            return desk_1, desk_2, desk_3, desk_4, desk_5, desk_6
 
     while len(desk_2) < 2:
         try:

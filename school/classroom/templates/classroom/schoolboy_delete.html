@@ -14,10 +14,12 @@
     <form action="{{ schoolboy.get_delete_url }}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="card-header">
+            <a href="{{ schoolboy.classroom.get_absolute_url }}"
+               class="btn btn-outline-secondary">Назад</a>
+            {% if request.user.is_authenticated %}
             <button type="submit" class="btn btn-primary btn-block">Да</button>
-            <a href="{% url 'schoolboy' %}"
-               class="btn btn-outline-secondary">Нет</a>
         </div>
+        {% endif %}
     </form>
 </div>
 {% endblock %}

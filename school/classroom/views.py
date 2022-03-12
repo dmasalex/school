@@ -125,7 +125,6 @@ def location_now(request, pk):
     return render(request, 'classroom/location_now.html', context=context)
 
 
-
 def location_save(request, slug):
     now = datetime.now()
     try:
@@ -166,7 +165,6 @@ class SchoolboyDelete(DeleteView):
 class SchoolboyListView(ListView):
     model = Location
     template_name = 'classroom/index.html'
-    #allow_empty = False
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
