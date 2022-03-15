@@ -550,12 +550,3 @@ def create_lst_boys(boys_one, girls_one, boys_one_plus, girls_one_plus, boys_two
     desk_1 = [desk_1[0], desk_1[1], tmp_lst[0], tmp_lst[1], desk_1[2], desk_1[3]]
 
     return desk_1, desk_2, desk_3, desk_4, desk_5, desk_6
-
-
-
-"""
-Вопросы НА:
-первые две парты не рендерятся 12 учеников
-колличество огнаничений не больше первых двух парт
-общее колличество ребят (36 мах)
-"""
