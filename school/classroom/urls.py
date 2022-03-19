@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import SchoolboyListView, ClassroomDetailView, SchoolboyDetailView, SchoolboyCreate, TeacherDetail, \
-    location, SchoolboyUpdate, SchoolboyDelete, location_save, location_now, user_login, user_logout
+    location, SchoolboyUpdate, SchoolboyDelete, location_save, location_now, user_login, user_logout, print_location
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -17,6 +17,7 @@ urlpatterns = [
     path('location/<str:slug>/', location, name='location'),
     path('location_now/<int:pk>/', location_now, name='location_now'),
     path('location_save/<str:slug>/', location_save, name='location_save'),
+    path('print_location/<int:pk>/', print_location, name='print_location')
 ]
 
 if settings.DEBUG:

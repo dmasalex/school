@@ -11,6 +11,21 @@ from django.contrib.auth import login, logout
 from _datetime import datetime
 
 
+def print_location(request, pk):
+    location = Location.objects.get(id=pk)
+    dict_boy = {}
+    dict_loc = eval(location.position)
+
+    for key, value in dict_loc.items():
+        lst = []
+        for row in value:
+            boy = Schoolboy.objects.get(slug=row)
+            lst.append(boy.name)
+        dict_boy[key] = lst
+
+    return render(request, 'classroom/print_location.html', dict_boy)
+
+
 def user_login(request):
     if request.method == "POST":
         form = UserLoginForm(data=request.POST)
@@ -121,6 +136,8 @@ def location_now(request, pk):
             tmp.append(boy)
         context[key] = tmp
     context['teachers'] = Teacher.objects.filter(classroom__slug=boy.classroom.slug)
+    context['classroom'] = Classroom.objects.get(slug=boy.classroom.slug)
+    context['pk'] = pk
 
     return render(request, 'classroom/location_now.html', context=context)
 
